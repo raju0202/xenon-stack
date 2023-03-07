@@ -1,0 +1,34 @@
+.navbar{
+	background: #119af0;
+	padding: 15px 35px;
+	border: 0px;
+	border-radius: 0px;
+}
+.navbar .navbar-brand{
+	color: whitesmoke !important;
+	font-family: times new roman;
+	font-weight: bolder;
+	font-size: 25px;
+	margin-left: -63px;
+	cursor: pointer;
+}
+
+.navbar .navbar-brand span{
+	color: maroon;
+}
+.navbar .navbar-brand:hover{
+	color:maroon !important; 
+}
+.navbar .navbar-brand:hover span{
+	color:white;
+}
+.nav li a{
+	color: whitesmoke !important;
+	font-size:15px;
+	padding: 15px 10px;
+
+}
+.nav li a:hover{
+  color:maroon !important;
+   
+}

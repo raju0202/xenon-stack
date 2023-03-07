@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- adding the google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+
+    <!-- adding the css file -->
+    <link rel="stylesheet" href="./Login.css" />
+    <title>Hospital Page</title>
+</head>
+<body>
+    <!-- creating the navigation menu -->
+    <nav>
+        <img src="../images/logo.png" alt="logo">
+        <a href="/"></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact/contact.html">Contact Us</a></li>
+            <li><a href="/Login/Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- creating the main section -->
+    <!-- CSS Sheet -->
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <form >
+        <h1>Login Page</h1>
+        <label for="Email">Email/Phone</label>
+        <input type="email" id="password" placeholder="Enter Your email.."/>
+        <label for="cnfrm-password">Password</label>
+        <input type="password" id="cnfrm-password" placeholder="Enter Your password.." />
+        <p id="message"></p>
+        <input type="button"  onclick="checkPassword()" value="SUBMIT"/>
+
+        <div class="register">
+            <p>Don't have an account?</p>
+            <a href="../Register/register.html">Create an account</a>
+        </div>
+    </form>
+</body>
+
+</body>
+</html>

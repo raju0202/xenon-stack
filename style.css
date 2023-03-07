@@ -1,0 +1,100 @@
+.navbar{
+	background: #119af0;
+	padding: 15px 35px;
+	border: 0px;
+	border-radius: 0px;
+}
+.navbar .navbar-brand{
+	color: whitesmoke !important;
+	font-family: times new roman;
+	font-weight: bolder;
+	font-size: 25px;
+	margin-left: -63px;
+	cursor: pointer;
+}
+
+.navbar .navbar-brand span{
+	color: maroon;
+}
+.navbar .navbar-brand:hover{
+	color:maroon !important; 
+}
+.navbar .navbar-brand:hover span{
+	color:white;
+}
+.nav li a{
+	color: whitesmoke !important;
+	font-size:15px;
+	padding: 15px 10px;
+
+}
+.nav li a:hover{
+  color:maroon !important;
+   
+}
+.home{
+	height: 700px;
+	background: url('https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=400') !important;
+	background-repeat: no-repeat !important;
+	background-size: 100% auto !important;
+	margin-top: -20px;
+}
+.home .col-lg-6{
+	height: 100%;
+	padding: 0px;
+	background-color: rgb(255, 255, 255,.1);
+	text-align: center;
+
+}
+.home .col-lg-6 h1{
+   color: #1a0801 !important;
+   font-weight: bolder !important;
+   font-size: 50px !important;
+   font-family: gabriola;
+   margin-top: 159px;
+}
+.home .col-lg-6 p{
+   color: #1a0801 !important;
+   font-weight: bolder!important;
+   font-size: 20px !important;
+
+   font-family: gabriola;
+   
+   }
+   .contact{
+   	background: #0b0d7d;
+   	color: white;
+   	padding-top: 70px;
+   }
+   .subsr p{
+   	font-family: times new roman;
+   	font-size: 20px;
+   }
+   .subsr p span{
+   	font-family: arial;
+   	font-size: 17px;
+   }
+   .inp{
+   	background: transparent;
+   	border-radius: 0px;
+   	border-radius: 1px solid white;
+   }
+   .bt{
+   	border-radius: 0px;
+   }
+   .subsr{
+   	padding-bottom: 70px;
+   }
+   .con{
+   	text-align: center;
+   }
+   .left{
+   	padding: 50px;
+   }
+   .left h2, .left p{
+   	font-family:times new roman;
+
+   }
+   .left p{
+   	font-size: 16px;
+   }

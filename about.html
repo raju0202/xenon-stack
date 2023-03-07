@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+		
+		var ar = ['Naveen','Raju','Ravi','Abhe'];
+
+		var obj = {Name: 'Naveen', Class: 5, Subject: 'Math'};
+
+		var arobj = [
+						{Name:'Naveen', Email:'krish@gmail.com', password:'123456'},
+						{Name:'Raju', Email:'raju@gmail.com', password:'123456789'},
+						{Name:'Abhe', Email:'abhe@gmail.com', password:'abh123'},
+						{Name:'Priya', Email:'priya@gmail.com', password:'123priya'},
+					];
+
+		var prod = [
+			{Name:'Apple',Price:50, Selling:50},
+			{Name:'Mango',Price:53, Selling:53},
+			{Name:'Banana',Price:70, Selling:70},
+			{Name:'Gauva',Price:90, Selling:90},
+			{Name:'Grapee',Price:50, Selling:50},
+			{Name:'Kiwi',Price:40, Selling:40},
+			{Name:'Gauva2',Price:20, Selling:20},
+			{Name:'Grapee2',Price:79, Selling:79},
+			{Name:'Kiwi2',Price:200, Selling:200},
+		];
+
+	</script>
+	<style type="text/css">
+		#logout{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<!--  <nav class="navbar navbar-default">
+    <div class="col-lg-10 col-lg-offset-1">
+      <div class="navbar-header">
+        <div class="navbar-brand">
+          <span>XenonStack</span>
+       </div>
+       </div>
+
+      <ul class="nav navbar-nav navbar-right">
+      <li> <a href="">Home</a></li>
+      <li> <a href="index.html">Home</a></li>
+      <li> <a href="about.html">About</a></li>
+      <li> <a href="contact.html">Contact</a></li>
+      
+     </ul> -->
+
+     
+         
+     </div>
+  </nav>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+
+	<form class="navbar-form navbar-left">
+	  <div class="input-group">
+	    <input type="text" class="form-control" name="search" placeholder="Search">
+	    <div class="input-group-btn">
+	      <button class="btn btn-default" type="submit">
+	        <i class="glyphicon glyphicon-search"></i>
+	      </button>
+	    </div>
+	  </div>
+	</form>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li id="login"><a href="#" data-toggle="modal" data-target="#myModal">Login/Register</a></li>
+      <li> <a href="index.html">Home</a></li>
+      <li> <a href="about.html">About</a></li>
+      <li> <a href="contact.html">Contact</a></li>
+      <li id="logout"><a href="#" onclick="logout()">Logout</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login Panel</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="form-group">
+      		<input type="email" id="email" placeholder="Fill your Email" class="form-control">
+      	</div>
+      	<div class="form-group">
+      		<input type="password" id="password" placeholder="Fill your Password" class="form-control">
+      	</div>
+      	<div class="form-group">
+      		<button onclick="Login()" class="btn btn-danger">Login</button>
+      	</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button data-toggle='modal' data-target='#modal2' class="btn btn-danger pull-right">
+	<span class="glyphicon glyphicon-shopping-cart"></span>
+</button>
+
+
+<div id="modal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">My Cart</h4>
+      </div>
+      <div class="modal-body">
+
+      	<div id="mycart">
+      	</div>
+
+      	<script type="text/javascript">
+      		
+      		var cart = [];
+
+      		function showcart(){  
+      			var list = '';
+
+      			var l0 = '<ul class="list-group">';
+      			var l1 = '</ul>';
+
+      			// <ul>
+      			// 	<li></li>
+      			// </ul>
+
+
+
+      			list += l0
+      			for (var i = 0; i < cart.length; i++) {
+      				var d = "<button class='btn close' id='"+i+"' onclick='dell(this.id)'><span class='glyphicon glyphicon-trash'></span></button>";
+      				var a = "<li class='list-group-item'> "+d+" "+cart[i].Name+" &nbsp;&nbsp; "+cart[i].Selling+" X 1 = "+cart[i].Selling*1+"</li>";
+      				list += a;
+      			}
+      			list += l1
+
+      			document.getElementById('mycart').innerHTML = list;
+      		}
+
+      		showcart();
+
+      		function dell(x){
+      			// alert(x);
+      			cart.splice(x,1);
+      			showcart();
+      		}
+
+
+
+      	</script>
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid">
+
+<div class="col-lg-2 col-md-2 col-sm-2">
+	<select class="form-control" onchange="Product(this.value)">
+		<option value="">Sort By</option>
+		<option value="0">Name - Ascending</option>
+		<option value="1">Name - Desending</option>
+		<option value="2">Price - Ascending</option>
+		<option value="3">Price - Desending</option>
+	</select>
+</div>
+
+<div class="col-lg-2 col-md-2 col-sm-2">
+	<select id="sortalpha" class="form-control" onchange="Product(this.value)">
+		<option value="">Sort By</option>
+		<option>A</option>
+		<option>B</option>
+		<option>C</option>
+		<option>D</option>
+	</select>
+</div>
+
+
+<div class="col-lg-12 col-md-10 col-md-10">
+	<div id="pro"></div>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+	// https://www.google.com/?search=4&ab=nav&raj=58
+
+
+	var query = window.location.search;
+	var parms = new URLSearchParams(query)
+	var id = parms.get('search');
+
+	console.log(id);
+
+
+	function Product(x){
+
+		console.log()
+
+		if (x == 'A' || x == 'B' || x == 'C') {
+			pro = prod.filter(function (y){
+				return (y.Name.charAt(0) == x);
+			})
+			console.log(pro)
+		}else{
+			pro = prod;
+		}
+
+
+
+
+		// if (x == 0) {
+
+		// 	pro.sort(function (a,b) {
+		// 		// console.log(a);
+		// 		// console.log(b);
+		// 		var nameA = a.Name;
+		// 		var nameB = b.Name;
+		// 		if(nameA < nameB){
+		// 			return -1;
+		// 		}
+		// 		if (nameA > nameB) {
+		// 			return 1;
+		// 		}
+		// 	return 0;
+		// 	});
+
+
+
+
+
+		// }else if(x == 1){
+		// 	// pro.sort();
+		// 	// pro.reverse();
+
+		// 	pro.sort(function (a,b) {
+		// 		console.log(a);
+		// 		console.log(b);
+		// 		var nameA = a.Name;
+		// 		var nameB = b.Name;
+		// 		if(nameA < nameB){
+		// 			return -1;
+		// 		}
+		// 		if (nameA > nameB) {
+		// 			return 1;
+		// 		}
+		// 	return 0;
+		// 	});
+
+
+
+
+		// 	pro.reverse(function (a,b) {
+		// 		console.log(a);
+		// 		console.log(b);
+		// 		var nameA = a.Name;
+		// 		var nameB = b.Name;
+		// 		if(nameA < nameB){
+		// 			return -1;
+		// 		}
+		// 		if (nameA > nameB) {
+		// 			return 1;
+		// 		}
+		// 	return 0;
+		// 	});
+
+
+		// }
+
+
+		// if(x == 2){
+		// 	// asc
+
+		// 	pro.sort(function(a,b){
+		// 		return a.Selling - b.Selling;
+		// 	})
+
+		// }else if(x == 3){
+		// 	// desc
+		// 	pro.sort(function(a,b){
+		// 		return a.Selling - b.Selling;
+		// 	})
+
+		// 	pro.reverse(function(a,b){
+		// 		return a.Selling - b.Selling;
+		// 	})
+
+		// }
+
+
+
+		var str = '';
+		for (var i = 0; i < pro.length; i++) {
+			// pro[i]
+			if (id) {
+
+				if (id == pro[i].Name) {
+
+					var a = "<div><div class='col-lg-2'><h4>"+pro[i].Name+"</h4><h5>Rs."+pro[i].Price+" <del>Rs."+pro[i].Selling+"</del></h5>";
+					var b = "<button class='btn btn-success'>Add</button>";
+					var c = "</div></div>";
+					var d = a+b+c;
+					console.log(d);
+					str += d;
+
+				}
+
+			}else{
+
+			var a = "<div><div class='col-lg-2 col-md-2 col-sm-2 text-center'><h4>"+pro[i].Name+"</h4><h5>Rs."+pro[i].Price+" <del>Rs."+pro[i].Selling+"</del></h5>";
+					var b = "<button id='"+pro[i].Name+","+pro[i].Price+","+pro[i].Selling+"' onclick='addtocart(this.id)' class='btn btn-success'>Add</button>";
+					var c = "</div></div>";
+					var d = a+b+c;
+					// console.log(d);
+					str += d;
+			}
+		}
+		document.getElementById('pro').innerHTML = str;
+	}
+
+	Product();
+
+	str = {Name:'apple',Price:'100',Selling:'120'}
+	// str = [apple,100,120]
+
+
+	function addtocart(x){
+		// alert(x);
+		var result = x.split(",");
+		// console.log(result22)
+
+		var str = {Name:result[0],Price:result[1],Selling:result[2]}
+		cart.push(str);
+		showcart();
+
+	}
+
+
+	function Login(){
+		var email = document.getElementById('email');
+		var password = document.getElementById('password');
+		if (email.value == '') {
+			alert('Please fill Email');
+			email.focus();
+		}else if (password.value == '') {
+			alert('Please fill Password');
+			password.focus();
+		}else{
+			// alert('ok');
+			// arobj
+
+			for (var i = 0; i < arobj.length; i++) {
+				
+				if(arobj[i].Email == email.value && arobj[i].password == password.value){
+					alert('yes');
+					localStorage.setItem('UserEmailValidation',arobj[i].Email);
+					window.location.href = 'about.html';
+					break;
+				} 
+
+				if(arobj.length == (i+1)){
+					alert('Wrong ID or Password')
+				}
+			}
+		}
+	}
+
+
+	function checklogin(){
+		var id = localStorage.getItem('UserEmailValidation');
+		if (id) {
+			console.log(id);
+			document.getElementById('login').style.display = 'none';
+			document.getElementById('logout').style.display = 'block';
+		}else{
+			console.log('no');
+		}
+	}
+
+	checklogin();
+
+
+	function logout(){
+		localStorage.removeItem('UserEmailValidation');
+		window.location.href = 'about.html';
+	}
+
+
+</script>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+		// document.write(ar[0]);
+
+		// document.write(obj.Subject)
+
+		// document.write(arobj[1].Email)
+
+		// document.write(arobj.length);
+
+		// for (var i = 0; i < arobj.length; i++) {
+		// 	console.log(arobj[i].Name);
+		// 	console.log(arobj[i].Email);
+		// 	console.log(arobj[i].password);
+		// }
+
+
+	</script>
+
+
+
+
+</body>
+</html>
